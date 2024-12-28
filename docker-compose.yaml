@@ -29,8 +29,7 @@ services:
     profiles:
       - production
     healthcheck:
-      test: ["CMD", "curl", "--silent", "--fail", "http://localhost:${PORT}/health"]
-      interval: 30s
-      retries: 3
-      start_period: 5s
-      timeout: 10s
+      test: ["CMD-SHELL", "wget -qO- http://127.0.0.1:5173/"]
+      interval: 5s
+      timeout: 20s
+      retries: 10
