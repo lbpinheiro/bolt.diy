@@ -3,6 +3,8 @@ FROM ${BASE} AS base
 
 WORKDIR /app
 
+RUN apt-get update && apt-get install -y curl
+
 # Install dependencies (this step is cached as long as the dependencies don't change)
 COPY package.json pnpm-lock.yaml ./
 
