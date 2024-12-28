@@ -27,4 +27,4 @@ services:
       - "host.docker.internal:host-gateway"
     command: pnpm run dockerstart
     profiles:
-      - production
+      - default
